@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Search from '../Search';
 import { IPAdress, FlagIcon } from '../Location/IPAdress';
 import { FiShoppingCart } from "react-icons/fi";
-import Home from '../Home/Home';
 
 const Header = () => {
   return (
@@ -42,7 +41,6 @@ const Header = () => {
           </Link>
         </div>
       </nav>
-      <Home />
     </>
   );
 };
