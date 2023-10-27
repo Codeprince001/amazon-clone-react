@@ -6,6 +6,7 @@ import Search from '../Search';
 import { IPAdress, FlagIcon } from '../Location/IPAdress';
 import { FiShoppingCart } from "react-icons/fi";
 
+
 const Header = () => {
   return (
     <>
