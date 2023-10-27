@@ -9,7 +9,6 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Header />} />
           <Route path='/' element={<Home />} />
           <Route path='/checkout'
             element={<Checkout />} />
