@@ -11,6 +11,7 @@ const fetchIPAdress = () => {
   const [countryCode, setCountyCode] = useState();
 
   useEffect(() => {
+    let isMountted = true;
     const fetchApi = async () => {
       const url = 'https://find-any-ip-address-or-domain-location-world-wide.p.rapidapi.com/iplocation?apikey=873dbe322aea47f89dcf729dcc8f60e8';
       const options = {
@@ -24,17 +25,23 @@ const fetchIPAdress = () => {
       try {
         const response = await fetch(url, options);
         const result = await response.json();
-        cachedData = result;
-        setCountry(result.country);
-        setFlag(result.flag);
-        setCountyCode(result.countryISO2);
-        console.log(result.countryISO2);
+        if (isMountted) {
+          cachedData = result;
+          setCountry(result.country);
+          setFlag(result.flag);
+          setCountyCode(result.countryISO2);
+          console.log(result.countryISO2);
+        }
       } catch (error) {
         console.error(error);
       }
     };
 
     fetchApi();
+
+    return () => {
+      isMountted = false;
+    };
   }, []);
 
   return { flag, country, countryCode };
