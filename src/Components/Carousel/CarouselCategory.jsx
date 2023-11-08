@@ -22,7 +22,7 @@ const CarouselCategory = () => {
       <Swiper
         className='bg-white p-4 relative mr-12 '
         spaceBetween={8}
-        slidesPerView={8}
+        slidesPerView={6}
         loop={false}
         scrollbar={{
           hide: true,
