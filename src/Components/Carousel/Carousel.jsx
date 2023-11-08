@@ -21,7 +21,7 @@ function Carousel() {
     <section className='h-[600px]'>
       <Swiper
         slidesPerView={1}
-        className='h-[60%]'
+        className='h-[70%] w-full max-[0 auto] bg-none'
         spaceBetween={30}
         loop={true}
         navigation={true}
@@ -31,11 +31,22 @@ function Carousel() {
         }}
         modules={[Pagination, Navigation, Autoplay]}
       >
-        <SwiperSlide><div className='swiper-slide-content'><img src={banner1} className='slide-img' /></div></SwiperSlide>
-        <SwiperSlide><div className='swiper-slide-content'><img src={banner2} className='slide-img' /></div></SwiperSlide>
-        <SwiperSlide><div className='swiper-slide-content'><img src={banner3} className='slide-img' /></div></SwiperSlide>
-        <SwiperSlide><div className='swiper-slide-content'><img src={banner4} className='slide-img' /></div></SwiperSlide>
-        <SwiperSlide><div className='swiper-slide-content'><img src={banner5} className='slide-img' /></div></SwiperSlide>
+
+        {/* .swiper-slide-content::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  top: 100px;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255) 100%);
+} */}
+        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner1} className='slide-img w-full object-cover ' /></div></SwiperSlide>
+        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner2} className='slide-img w-full object-cover ' /></div></SwiperSlide>
+        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner3} className='slide-img w-full object-cover ' /></div></SwiperSlide>
+        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner4} className='slide-img w-full object-cover ' /></div></SwiperSlide>
+        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner5} className='slide-img w-full object-cover ' /></div></SwiperSlide>
       </Swiper>
     </section>
   );
