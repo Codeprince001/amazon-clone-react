@@ -8,7 +8,9 @@ export default {
     extend: {
       colors: {
         amazon: {
-          background: "#ededed"
+          background: "#ededed",
+          yellow: "#FFCC4B",
+          cart: "radial-gradient(circle, rgba(255,204,75,1) 0%, rgba(255,204,75,1) 47%, rgba(255,156,42,1) 100%);"
         }
       }
     },
