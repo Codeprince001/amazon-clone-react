@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState, createContext, useContext } from 'react';
 import { useEffect } from 'react';
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import "./ip.css";
 
-let cachedData = null;
+export const locationContext = createContext();
 
-const fetchIPAdress = () => {
-  const [country, setCountry] = useState();
-  const [flag, setFlag] = useState();
-  const [countryCode, setCountyCode] = useState();
+export const FetchIPAdress = () => {
+  const [ipData, setIpData] = useState({
+    country: '',
+    flag: '',
+    countryCode: '',
+  });
+
 
   useEffect(() => {
     let isMountted = true;
@@ -26,11 +29,11 @@ const fetchIPAdress = () => {
         const response = await fetch(url, options);
         const result = await response.json();
         if (isMountted) {
-          cachedData = result;
-          setCountry(result.country);
-          setFlag(result.flag);
-          setCountyCode(result.countryISO2);
-          console.log(result.countryISO2);
+          setIpData({
+            country: result.country,
+            flag: result.flag,
+            countryCode: result.countryISO2
+          });
         }
       } catch (error) {
         console.error(error);
@@ -44,18 +47,19 @@ const fetchIPAdress = () => {
     };
   }, []);
 
-  return { flag, country, countryCode };
+  return ipData;
 };
 
 export const IPAdress = () => {
-  const { country } = fetchIPAdress();
+  // const { country } = FetchIPAdress();
+  const { country } = useContext(locationContext);
 
   return (
     <div className='location'>
       <HiOutlineLocationMarker className='location-icon' />
-      <div className='deliver-to-country'>
-        <span className='deliver-to'>Deliver to</span>
-        <span className='country'>
+      <div className='deliver-to-country text-left'>
+        <span className='deliver-to text-left'>Deliver to</span>
+        <span className='country text-left'>
           {country}</span>
       </div>
 
@@ -65,7 +69,7 @@ export const IPAdress = () => {
 
 export const FlagIcon = () => {
 
-  const { flag, countryCode } = fetchIPAdress();
+  const { flag, countryCode } = useContext(locationContext);
 
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
