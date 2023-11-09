@@ -9,7 +9,7 @@ import { useState } from 'react';
 
 const CarouselCategory = () => {
   const [isNextDisabled, setIsNextDisabled] = useState(false);
-  const [isPrevDisabled, setIsPrevtDisabled] = useState(true);
+  const [isPrevDisabled, setIsPrevDisabled] = useState(true);
 
   const handleSlideChange = (swiper) => {
     setIsNextDisabled(swiper.isEnd);
