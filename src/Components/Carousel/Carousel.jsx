@@ -42,11 +42,11 @@ function Carousel() {
   height: 50%;
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255) 100%);
 } */}
-        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner1} className='slide-img w-full object-cover ' /></div></SwiperSlide>
-        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner2} className='slide-img w-full object-cover ' /></div></SwiperSlide>
-        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner3} className='slide-img w-full object-cover ' /></div></SwiperSlide>
-        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner4} className='slide-img w-full object-cover ' /></div></SwiperSlide>
-        <SwiperSlide><div className='swiper-slide-content before:content-none before:absolute bottom-0 top-0 w-full h-[50%] bg-gradient-to-b from-gray-400 to-slate-700'><img src={banner5} className='slide-img w-full object-cover ' /></div></SwiperSlide>
+        <SwiperSlide><div className='swiper-slide-content absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-b from-black to-white opacity-70'><img src={banner1} className='slide-img w-full object-cover ' /></div></SwiperSlide>
+        <SwiperSlide><div className='swiper-slide-content absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-b from-black to-white opacity-70'><img src={banner2} className='slide-img w-full object-cover ' /></div></SwiperSlide>
+        <SwiperSlide><div className='swiper-slide-content absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-b from-black to-white opacity-70'><img src={banner3} className='slide-img w-full object-cover ' /></div></SwiperSlide>
+        <SwiperSlide><div className='swiper-slide-content absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-b from-black to-white opacity-70'><img src={banner4} className='slide-img w-full object-cover ' /></div></SwiperSlide>
+        <SwiperSlide><div className='swiper-slide-content absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-gradient-to-b from-black to-white opacity-70'><img src={banner5} className='slide-img w-full object-cover ' /></div></SwiperSlide>
       </Swiper>
     </section>
   );
