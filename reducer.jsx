@@ -1,14 +1,5 @@
 export const initialState = {
-  basket: [
-    {
-      title: "Sceptre 24-inch",
-      imgUrl: "https://m.media-amazon.com/images/I/81zM2vVM+wL._AC_SX679_.jpg",
-      price: 89,
-      rating: 4,
-      description: "Sceptre 24-inch Professional Thin 1080p LED Monitor 99% sRGB 2x HDMI VGA Build-in Speakers, Machine Black (E248W-19203R Series) Professional Thin 1080p LED Monitor 99% sRGB 2x HDMI VGA Build-in Speakers, Machine Black (E248W-19203R Series)",
-      id: 3,
-    }
-  ]
+  basket: []
 };
 
 export const reducer = (state, action) => {
@@ -23,8 +14,15 @@ export const reducer = (state, action) => {
     };
   } if (action.type === "remove-from-cart") {
 
+    const newBasket = [...state.basket];
+
+    const itemIndex = state.basket.findIndex((item) => item.id === action.id);
+    if (itemIndex >= 0) {
+      newBasket.splice(itemIndex, 1);
+    }
     return {
-      state
+      ...state,
+      basket: newBasket
     };
   }
   if (action.type === "reduce-quantity") {
@@ -40,6 +38,7 @@ export const reducer = (state, action) => {
     };
   }
   if (action.type === "increase-quantity") {
+
     const updatedBasket = state.basket.map((item, index) =>
       index === action.index && item.quantity >= 0
         ? { ...item, quantity: item.quantity + 1 }
@@ -61,5 +60,4 @@ export const reducer = (state, action) => {
       ]
     };
   }
-}
-
+};
